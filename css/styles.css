@@ -374,7 +374,7 @@ section {
 /* Extra Small devices (tablets, 446px and less) */
 @media (max-width: 456px) { 
 	
-	#mc_form .form-control {
+	/* #mc_form .form-control {
 		width: 100%;
 		margin-bottom: 15px;
 	}
@@ -385,10 +385,31 @@ section {
 	
 	#header .logo {
 		width: 200px;
-	}
+	} */
 	
-	#header h1 {
+	/* #header h1 {
 		display: none;
+	} */
+
+	body {
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	h1 {
+		font-size: 20px;
+		margin-top: 230px;
+		margin-bottom: 10px;
+	}
+
+	h2 {
+		font-size: 20px;
+		margin-bottom: 50px;
+	}
+
+	h5 {
+		font-size: 100px;
+		line-height: 20px;
 	}
 
 }
@@ -405,8 +426,8 @@ section {
 	}
 
 	h2 {
-		font-size: 24px;
-		line-height: 38px;
+		font-size: 44px;
+		line-height: 58px;
 	}
 
 	h3 {
@@ -420,8 +441,8 @@ section {
 	}
 
 	h5 {
-		font-size: 14px;
-		line-height: 20px;
+		font-size: 25px;
+		line-height: 30px;
 	}
 	
 	.clocktitle{
