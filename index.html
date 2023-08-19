@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coiff Lui & Elle</title>
+    <link rel="stylesheet/less" type="text/css" href="style.less"/>
+    <script src="less.js"></script>
+    <script defer src="app.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <div class="main">
+      <div class="phone-top-bar">
+        <div id="menu-button" class="menu-button" ontouchstart="toggleNavBar()">
+          <img src="images/menu-bars.png">
+        </div>
+        <!-- <div class="logo">
+          <img src="images/logo.png">
+        </div> -->
+        <!-- Mettre emoji ciseaux -->
+      </div>
+      <nav id="nav">
+        <ul id="nav-list">
+          <li><div ontouchstart="scrollToDiv('tarifs')">Tarifs</div></li>
+          <li><div ontouchstart="scrollToDiv('nos_services')">Nos services</div></li>
+          <li><div ontouchstart="scrollToDiv('contact')">Contact</div></li>
+        </ul>
+      </nav>
+      <nav class="desktop">
+        <ul class="desktop">
+          <li><a href="#tarifs">Tarifs</a></li>
+          <li><a href="#nos_services">Nos services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <div class="bg-img">
+          <div class="bg-img-text">
+            <div>Coiff Lui & Elle</div>
+            <div>Montluçon 03100</div>
+            <div><a href="tel:04 70 05 11 60" style="text-decoration: none; color: white;">📞 04 70 05 11 60</a></div>
+          </div>
+        </div>
+        <div class="elements">
+          <div id="tarifs" class="element">
+            <div class="title">
+              TARIFS
+            </div>
+            <div class="content">
+              <div class="subtitle"><b>test...</b></div>
+              <div class="sub-content">test...</div>
+              <div class="sub-content">test...</div>
+            </div>
+          </div>
+          <div id="nos_services" class="element">
+            <div class="title">
+              NOS SERVICES
+            </div>
+            <div class="content">
+              <div class="subtitle"><b>Test</b></div>
+              <div class="sub-content">test...</div>
+              <div class="subtitle"><b>Test</b></div> 
+              <div class="sub-content">test...</div>
+            </div>
+          </div>
+          <div id="contact" class="element">
+            <div class="title">
+              CONTACT
+            </div>
+            <div class="content">
+              <div class="subtitle"><b>Téléphone</b></div>
+              <div class="sub-content">
+                <a href="tel:04 70 05 11 60" style="text-decoration: none; color: white;">04 70 05 11 60</a>
+              </div>
+              <div class="subtitle"><b>Instagram</b></div>
+              <div class="sub-content">coiff_lui_et_elle</div>
+              <div class="subtitle"><b>Adresse</b></div>
+              <div class="sub-content">17 Rue Bretonnie, 03100 Montluçon</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
