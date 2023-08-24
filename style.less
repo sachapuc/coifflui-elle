@@ -1,6 +1,4 @@
 @custom_yellow: rgb(220, 223, 80);
-@custom_black: rgb(20, 20, 20);
-
 @font-face {
   font-family: "FjallaOne";
   src: url("FjallaOne-Regular.ttf") format("truetype"),
@@ -17,7 +15,7 @@ body {
 }
 
 .main {
-  background-color: @custom_black;
+  background-color: rgb(20, 20, 20);
   .phone-top-bar {
     background-color: rgb(0, 0, 0);
     height: 60px;
@@ -123,14 +121,22 @@ body {
     display: flex;
     flex-direction: column;
     gap: 90px;
-    margin: 0 30px;
     padding-bottom: 80px;
+
+    .bg-img2 {
+      height: 500px;
+      background-image: url('images/bgimg2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
 
     .element {
       display: flex;
       align-items: center;
       flex-direction: column;
       gap: 60px;
+      margin: 0 30px;
 
       .title {
         color: @custom_yellow;
@@ -161,6 +167,10 @@ body {
             height: 250px;
           }
           margin: 30px;
+        }
+
+        table, td {
+          border: 1px solid white;
         }
       }
     }
