@@ -12,20 +12,18 @@
     <div class="main">
       <div class="phone-top-bar">
         <div id="menu-button" class="menu-button" ontouchstart="toggleNavBar()">
-          <img src="images/menu-bars.png">
+          <img src="images/menu-bars-brown.png">
         </div>
-        <!-- <div class="logo">
-          <img src="images/logo.png">
-        </div> -->
-        <!-- TODO Mettre emoji ciseaux -->
+        <div class="logo">
+          ✂️
+        </div>
       </div>
       <nav id="nav">
         <ul id="nav-list">
           <li><div ontouchstart="scrollToDiv('tarifs')">Tarifs</div></li>
           <li><div ontouchstart="scrollToDiv('details')">Détails</div></li>
           <li><div ontouchstart="scrollToDiv('a_propos')">À propos</div></li>
-          <!-- TODO Faire les photos dans un modal  -->
-          <li><div ontouchstart="scrollToDiv('photos')">Photos</div></li>
+          <li><div ontouchstart="openModal()">Photos</div></li>
           <li><div ontouchstart="scrollToDiv('contact')">Contact</div></li>
         </ul>
       </nav>
@@ -33,17 +31,39 @@
         <ul class="desktop">
           <li><a href="#tarifs">Tarifs</a></li>
           <li><a href="#details">Détails</a></li>
-          <li><a href="#photos">Photos</a></li>
+          <li><a onclick="openModal()">Photos</a></li>
           <li><a href="#a_propos">À propos</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <div id="modal-background" class="modal-background">
+        <div class="modal-container">
+          <div class="modal-stuff">
+            <div class="cross" ontouchstart="closeModal()" onclick="closeModal()">
+              <img src="images/cross.png">
+            </div>
+            <div class="title">PHOTOS</div>
+            <div class="photos">
+              <img src="images/photos/photo1.png">
+              <img src="images/photos/photo2.png">
+              <img src="images/photos/photo3.png">
+              <img src="images/photos/photo4.png">
+              <img src="images/photos/photo5.png">
+              <img src="images/photos/photo6.png">
+              <img src="images/photos/photo7.png">
+              <img src="images/photos/photo8.png">
+              <img src="images/photos/photo9.png">
+              <img src="images/photos/photo10.png">
+            </div>
+          </div>
+        </div>
+      </div>
       <div>
         <div class="bg-img">
           <div class="bg-img-text">
             <div>Coiff Lui & Elle</div>
-            <div>Montluçon 03100</div>
-            <div><a href="tel:04 70 05 11 60" style="text-decoration: none; color: white;">📞 04 70 05 11 60</a></div>
+            <div>17 Rue Bretonnie, 03100 Montluçon</div>
+            <div><a href="tel:04 70 05 11 60">📞 04 70 05 11 60</a></div>
           </div>
         </div>
         <div class="elements">
@@ -52,11 +72,12 @@
               TARIFS
             </div>
             <div class="content">
-              <div class="subtitle"><b>Pour lui</b></div>
+              <div class="tarifs-contents"></div>
+              <div class="content-title" style="color: rgb(46, 130, 155); border-color: rgb(46, 130, 155);"><b>Pour lui</b></div>
               <div class="sub-content">20€ <br><br> (-18 ans) : <br><br>18€</div>
-              <div class="subtitle"><b>Pour elle</b></div>
+              <div class="content-title" style="color: rgb(155, 46, 99); border-color: rgb(155, 46, 99);"><b>Pour elle</b></div>
               <div class="sub-content">26€ / 29€ / 32€</div>
-              <div class="subtitle"><b>Pour les -4 ans</b></div>
+              <div class="content-title"><b>Pour les -4 ans</b></div>
               <div class="sub-content">11€</div>
             </div>
           </div>
@@ -64,35 +85,180 @@
             <div class="title">
               DETAILS
             </div>
-            <div class="content">
-              <table>
-                <tbody>
-                  <tr>
-                    <td>SH + COUPE Moderne + COIFFAGE</td>
-                    <td>20 €</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="sub-title">
+              Tarifs messieurs
+            </div>
+            <div class="content tables">
+              <div class="table-container">
+                <div class="content-title table"><b>Adultes</b></div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>SH + COUPE Moderne + COIFFAGE</td>
+                      <td>20 €</td>
+                    </tr>
+                    <tr>
+                      <td>SH + COUPE Classique + COIFFAGE</td>
+                      <td>19.50 €</td>
+                    </tr>
+                    <tr>
+                      <td>SH + COUPE Couronne + COIFFAGE</td>
+                      <td>16 €</td>
+                    </tr>
+                    <tr>
+                      <td>SH + COUPE Bébé (- 4 ans)</td>
+                      <td>11 €</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-container">
+                <div class="content-title table"><b>Jeunes</b></div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>SH + COUPE Bébé (- 4 ans)</td>
+                      <td>11 €</td>
+                    </tr>
+                    <tr>
+                      <td>SH + COUPE Junior (- 12 ans)</td>
+                      <td>16 €</td>
+                    </tr>
+                    <tr>
+                      <td>SH + COUPE Junior (- 14 ans)</td>
+                      <td>17.50 €</td>
+                    </tr>
+                    <tr>
+                      <td>SH + COUPE Junior (- 18 ans)</td>
+                      <td>18 €</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-container">
+                <div class="content-title table"><b>Simple</b></div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>SH + COIFFAGE</td>
+                      <td>13 €</td>
+                    </tr>
+                    <tr>
+                      <td>TAILLE DE BARBE (seule)</td>
+                      <td>9 €</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-container">
+                <div class="content-title table"><b>Techniques</b></div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>PERMANENTES à partir de</td>
+                      <td>27 €</td>
+                    </tr>
+                    <tr>
+                      <td>MÈCHES à partir de</td>
+                      <td>25 €</td>
+                    </tr>
+                    <tr>
+                      <td>COLORATION</td>
+                      <td>20 €</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="sub-title">
+              Tarifs dames
+            </div>
+            <div class="content tables">
+              <div class="table-container">
+                <div class="content-title table"><b>Cheveux courts</b></div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>SH + COUPE + COIFFAGE</td>
+                      <td>26 €</td>
+                    </tr>
+                    <tr>
+                      <td>SH + COUPE + BRUSHING</td>
+                      <td>29 €</td>
+                    </tr>
+                    <tr>
+                      <td>SH + BRUSHING</td>
+                      <td>20 €</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-container">
+                <div class="content-title table"><b>Cheveux aux carré ou longs</b></div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>SH + COUPE + BRUSHING</td>
+                      <td>32 €</td>
+                    </tr>
+                    <tr>
+                      <td>SH + BRUSHING</td>
+                      <td>25 €</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-container">
+                <div class="content-title table"><b>Techniques</b></div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>COLORATION</td>
+                      <td>20 €</td>
+                    </tr>
+                    <tr>
+                      <td>MÈCHES CHEVEUX COURTS</td>
+                      <td>25 €</td>
+                    </tr>
+                    <tr>
+                      <td>MÈCHES CHEVEUX AUX CARRÉ OU LONGS</td>
+                      <td>32, 39, 45 €</td>
+                    </tr>
+                    <tr>
+                      <td>PERMANENTES à partir de</td>
+                      <td>27 €</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="content-subtitle table">Travail à domicile (6 € en plus de la prestation) </div>
+            <div class="content-subtitle2 table">Il est possible de consulter la carte complète des prix TTC.</div>
+          </div>
+          <div class="bg-img2">
+            <div class="bg-img-text">
+              <div>Lundi: fermé</div>
+              <div>Mardi au Vendredi: 8h-12h / 13h30-19h</div>
+              <div>Samedi: 8h-12h / 13h30-17h30</div>
             </div>
           </div>
-          <div class="bg-img2"></div>
           <div id="a_propos" class="element">
             <div class="title">
               À propos
             </div>
             <div class="content">
-              <div class="subtitle"><b>Histoire</b></div>
+              <div class="content-title"><b>Histoire</b></div>
               <div class="sub-content">Coiff lui né en décembre 1971, devient Coiff lui & elle en juin 2004.</div>
-              <div class="subtitle"><b>Le mobilier</b></div>
+              <div class="content-title"><b>Le mobilier</b></div>
               <div class="sub-content">Des meubles de barbiers sont présents depuis 5 générations, toujours mis en valeur avec la décoration d'aujourd'hui.</div>
-              <div class="subtitle"><b>À propos</b></div>
+              <div class="content-title"><b>À propos</b></div>
               <div class="sub-content">Sacha et son personnel vous accueillent dans son salon climatisé situé au coeur de la ville de Montluçon.</div>
-              <div class="subtitle"><b>Bon à savoir</b></div>
+              <div class="content-title"><b>Bon à savoir</b></div>
               <div class="sub-content">Stationnement à proximité gratuit pendant 2h, avec un disque.</div>
-              <div class="subtitle"><b>Pratique</b></div>
-              <div class="sub-content">Coiffure à domicile sur RDV.</div>
-              <div class="subtitle"><b>Bonus</b></div>
-              <div class="sub-content">Taille de barbe offerte pour chaque coupe homme.</div>
+              <div class="content-title"><b>Pratique</b></div>
+              <div class="sub-content" style="color: rgb(46, 130, 155)">Coiffure à domicile sur RDV.</div>
+              <div class="content-title"><b>Bonus</b></div>
+              <div class="sub-content">Taille de barbe offerte pour chaque coupe homme. 😁</div>
             </div>
           </div>
           <div id="contact" class="element">
@@ -100,16 +266,14 @@
               CONTACT
             </div>
             <div class="content">
-              <div class="subtitle"><b>Téléphone</b></div>
+              <div class="content-title img">📞</div>
               <div class="sub-content">
-                <a href="tel:04 70 05 11 60" style="text-decoration: none; color: white;">04 70 05 11 60</a>
+                <a href="tel:04 70 05 11 60">04 70 05 11 60</a>
               </div>
-              <div class="subtitle"><b>Instagram</b></div>
-              <div class="sub-content">coiff_lui_et_elle</div>
-              <div class="subtitle"><b>Facebook</b></div>
-              <div class="sub-content">mettre lien avec logo comme insta</div>
-              <div class="subtitle"><b>Adresse</b></div>
-              <div class="sub-content">17 Rue Bretonnie, 03100 Montluçon</div>
+              <div class="content-title img"><img src="images/insta.png"></div>
+              <div class="sub-content"><a href="https://www.instagram.com/coiff_lui_et_elle/" target="_blank">coiff_lui_et_elle</a></div>
+              <div class="content-title img"><img src="images/facebook.png"></div>
+              <div class="sub-content"><a href="https://www.facebook.com/profile.php?id=100011634872662" target="_blank">Sacha-coiff-lui-et-elle</a></div>
             </div>
           </div>
         </div>
