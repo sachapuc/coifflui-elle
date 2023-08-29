@@ -217,13 +217,22 @@ body {
       margin: 0 30px;
 
       .title {
+        border: 2px solid @secondary_color;
+        border-radius: 10px;
+        box-shadow: 4px 4px @secondary_color;
+
+        padding: 12px;
+
         color: @secondary_color;
         font-size: 26px;
       }
 
       .sub-title {
         border: 2px solid @underline_color;
-        padding: 5px;
+        border-radius: 3px;
+        box-shadow: 4px 4px @underline_color;
+
+        padding: 12px;
         font-size: 23px;
       }
       
@@ -244,7 +253,7 @@ body {
         box-shadow: rgba(164, 166, 170, 0.2) 0px 8px 24px;
         padding: 22px;
 
-        .sub-content-tarifs {
+        .sub-content-tarifs, .sub-content-contact {
           display: flex;
           flex-direction: column;
           gap: 20px;
@@ -373,10 +382,15 @@ body {
           width: fit-content;
           padding: 30px;
 
-          &.tarifs {
+          &.tarifs, &.contact {
             flex-direction: row;
             justify-content: center;
+            align-items: center;
             gap: 100px;
+          }
+
+          &.contact {
+            align-items: baseline;
           }
 
           &.tables {
