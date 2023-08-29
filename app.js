@@ -27,6 +27,12 @@ function scrollToDiv(id) {
   document.documentElement.style.overflow = "visible"
 }
 
+const anchorElements = document.querySelectorAll('nav.desktop a');
+const originalHrefs = {};
+anchorElements.forEach(anchor => {
+  originalHrefs[anchor.innerHTML] = anchor.getAttribute('href');
+});
+
 function openModal() {
   toggleNavBar()
 
@@ -36,6 +42,11 @@ function openModal() {
   var menuButton = document.getElementById('menu-button')
   menuButton.style.cursor = 'auto';
   menuButton.ontouchstart = null
+
+  anchorElements.forEach(anchor => {
+    anchor.removeAttribute('href');
+    anchor.style.cursor = 'default';
+  });
 
   document.body.style.overflow = "hidden"
   document.documentElement.style.overflow = "hidden"
@@ -48,6 +59,11 @@ function closeModal() {
   var menuButton = document.getElementById('menu-button')
   menuButton.style.cursor = 'pointer';
   menuButton.ontouchstart = toggleNavBar;
+
+  anchorElements.forEach(anchor => {
+    anchor.setAttribute('href', originalHrefs[anchor.innerHTML]);
+    anchor.style.cursor = 'pointer';
+  });
 
   document.body.style.overflow = "visible"
   document.documentElement.style.overflow = "visible"
