@@ -1,6 +1,6 @@
 @underline_color: rgb(93, 62, 35);
-@bg_color: rgb(189, 174, 156);
-@nav_color: rgb(92, 70, 51);
+@bg_color: rgb(224, 217, 203);
+@nav_color: rgb(60, 64, 71);
 @primary_color: rgb(36, 32, 23);
 @secondary_color: rgb(214, 46, 65);
 
@@ -27,6 +27,8 @@ body {
     justify-content: center;
     align-items: center;
 
+    background-color: @nav_color;
+
     .menu-button {
       position: absolute;
       left: 15px;
@@ -41,7 +43,6 @@ body {
 
     .logo {
       font-size: 32px;
-      text-shadow: rgb(139, 139, 139) 0.1em 0.1em 0.2em;   
     }
   }
   nav {
@@ -154,7 +155,7 @@ body {
     }
   }
 
-  .bg-img {
+  .bg-img1 {
     height: 500px;
     background-image: url('images/bg-img.jpg');
     background-size: cover;
@@ -171,24 +172,27 @@ body {
   }
 
   .bg-img-text {
-    width: 100%;
+    width: 95%;
     height: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
     color: white;
+    text-shadow: 0.1em 0.1em 0.2em black;      
+    font-size: 30px;
 
     a {
       color: white;
     }
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-
-    text-shadow: black 0.1em 0.1em 0.2em;      
-    font-size: 30px;
-
-    text-align: center;
+    div {
+      margin-bottom: 7px;
+    }
   }
 
   .elements {
@@ -196,6 +200,13 @@ body {
     flex-direction: column;
     gap: 90px;
     padding-bottom: 80px;
+
+    .delimiter {
+      height: 2px;
+      width: 70vw;
+      background-color: black;
+      margin: 0 auto;
+    }
 
     .element {
       display: flex;
@@ -297,7 +308,7 @@ body {
 
   @media only screen and (min-width: 992px) {
 
-    .bg-img {
+    .bg-img1 {
       height: 650px;
     }
 
