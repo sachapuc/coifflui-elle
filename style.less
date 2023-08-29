@@ -1,5 +1,6 @@
 @underline_color: rgb(93, 62, 35);
 @bg_color: rgb(224, 217, 203);
+@bg_color_content: rgb(231, 226, 216);
 @nav_color: rgb(60, 64, 71);
 @primary_color: rgb(36, 32, 23);
 @secondary_color: rgb(214, 46, 65);
@@ -233,16 +234,28 @@ body {
         flex-direction: column;
         gap: 20px;
 
-        max-width: 1000px;
+        width: 80%;
 
         text-align: center;
         font-size: 20px;
 
+        background-color: @bg_color_content;
+        border-radius: 14px;
+        box-shadow: rgba(164, 166, 170, 0.2) 0px 8px 24px;
+        padding: 22px;
+
+        .sub-content-tarifs {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
         .content-title {
           border-bottom: 2px solid @underline_color;
+          width: fit-content;
+          margin: 0 auto;
+
           &.table {
-            width: fit-content;
-            margin: 0 auto;
             margin-bottom: 17px;
           }
 
@@ -357,6 +370,14 @@ body {
   
         .content {
           font-size: 20px;
+          width: fit-content;
+          padding: 30px;
+
+          &.tarifs {
+            flex-direction: row;
+            justify-content: center;
+            gap: 100px;
+          }
 
           &.tables {
             flex-direction: row;
